@@ -8,22 +8,21 @@ v = Varios()
 class Menu(Coneccion):
     def __init__(self):
         self.M()
+        
 
     def M(self):
         
-        self.Elegir(self.IngresarProducto, self.IngresarPaquete, self.IngresarPaquete)
+        self.Elegir()
              
-    def Elegir(self,op1, op2, op3):
+    def Elegir(self):
         while True:
             v.Opciones("Produccion")
             opcion = v.LeerString("Elige una opcion: ")
 
             if (opcion == "1"):
-                op1
+                self.IngresarProducto()
             elif (opcion == "2"):
-                op2
-            elif (opcion == "3"):
-                op3
+                self.IngresarPaquete()
             elif opcion == "4":
                 print("Saliendo del programa.")
                 break
@@ -41,7 +40,7 @@ class Menu(Coneccion):
     def IngresarPaquete(self):
         registroE = []
         empaque = v.LeerString("Empaque: ")
-        des = v.LeerString("Costo: ")
+        pre = v.LeerString("Costo: ")
         registroE.append(self.Coleccion(Empaque=empaque, Costo=pre))
         self.Insertar(c.InsertarTabla("empaque","null,?,?"), "produccion", registroE)
 #  self, query, base, coleccion
